@@ -1,13 +1,12 @@
 {
   "@microsoft/generator-sharepoint": {
-    "isCreatingSolution": true,
+    "isCreatingSolution": false,
     "environment": "spo",
     "version": "1.11.0",
     "libraryName": "qrcode-generator",
     "libraryId": "b3eb2660-fe88-46ca-8a0f-0cdd14f8902d",
     "packageManager": "npm",
     "isDomainIsolated": false,
-    "componentType": "extension",
-    "extensionType": "ListViewCommandSet"
+    "componentType": "webpart"
   }
 }

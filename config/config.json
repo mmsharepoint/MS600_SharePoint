@@ -9,10 +9,19 @@
           "manifest": "./src/extensions/qrCode/QrCodeCommandSet.manifest.json"
         }
       ]
+    },
+    "qr-code-wp-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/qrCodeWp/QrCodeWpWebPart.js",
+          "manifest": "./src/webparts/qrCodeWp/QrCodeWpWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "QrCodeCommandSetStrings": "lib/extensions/qrCode/loc/{locale}.js"
+    "QrCodeCommandSetStrings": "lib/extensions/qrCode/loc/{locale}.js",
+    "QrCodeWpWebPartStrings": "lib/webparts/qrCodeWp/loc/{locale}.js"
   }
 }
