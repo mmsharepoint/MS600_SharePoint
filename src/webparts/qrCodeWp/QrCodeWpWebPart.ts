@@ -22,7 +22,8 @@ export default class QrCodeWpWebPart extends BaseClientSideWebPart<IQrCodeWpWebP
       QrCodeWp,
       {
         serviceScope: this.context.serviceScope,
-        siteUrl: this.context.pageContext.site.absoluteUrl
+        siteUrl: this.context.pageContext.site.absoluteUrl,
+        siteID: `${window.location.hostname},${this.context.pageContext.site.id},${this.context.pageContext.web.id}`
       }
     );
 

@@ -26,7 +26,6 @@ export default class QrCodeCommandSet extends BaseListViewCommandSet<IQrCodeComm
 
   @override
   public onInit(): Promise<void> {
-    debugger;
     Log.info(LOG_SOURCE, 'Initialized QrCodeCommandSet');
     return Promise.resolve();
   }
