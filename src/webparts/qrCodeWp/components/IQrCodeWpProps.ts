@@ -1,3 +1,6 @@
+import { ServiceScope } from "@microsoft/sp-core-library";
+
 export interface IQrCodeWpProps {
-  description: string;
+  siteUrl: string;
+  serviceScope: ServiceScope;
 }

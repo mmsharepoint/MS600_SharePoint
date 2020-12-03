@@ -21,7 +21,8 @@ export default class QrCodeWpWebPart extends BaseClientSideWebPart<IQrCodeWpWebP
     const element: React.ReactElement<IQrCodeWpProps> = React.createElement(
       QrCodeWp,
       {
-        description: this.properties.description
+        serviceScope: this.context.serviceScope,
+        siteUrl: this.context.pageContext.site.absoluteUrl
       }
     );
 
