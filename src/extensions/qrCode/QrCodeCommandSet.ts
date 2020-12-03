@@ -6,9 +6,8 @@ import {
   IListViewCommandSetListViewUpdatedParameters,
   IListViewCommandSetExecuteEventParameters
 } from '@microsoft/sp-listview-extensibility';
-import { Dialog } from '@microsoft/sp-dialog';
-
 import * as strings from 'QrCodeCommandSetStrings';
+import QRCodeDialog from './components/QRCodeDialog';
 
 /**
  * If your command set uses the ClientSideComponentProperties JSON input,
@@ -27,6 +26,7 @@ export default class QrCodeCommandSet extends BaseListViewCommandSet<IQrCodeComm
 
   @override
   public onInit(): Promise<void> {
+    debugger;
     Log.info(LOG_SOURCE, 'Initialized QrCodeCommandSet');
     return Promise.resolve();
   }
@@ -45,7 +45,9 @@ export default class QrCodeCommandSet extends BaseListViewCommandSet<IQrCodeComm
     switch (event.itemId) {
       case 'QRCode':
         if (event.selectedRows.length > 0) {
-          Dialog.alert(`${this.properties.sampleTextOne} ${event.selectedRows[0].getValueByName("FileRef")}`);
+          const dialog: QRCodeDialog = new QRCodeDialog();
+          dialog.url = `https://${window.location.hostname}${event.selectedRows[0].getValueByName("FileRef")}`;
+          dialog.show();
         }        
         break;
       default:
