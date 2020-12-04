@@ -3,7 +3,8 @@ import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
 import {
   IPropertyPaneConfiguration,
-  PropertyPaneTextField
+  PropertyPaneTextField,
+  PropertyPaneToggle
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 
@@ -12,7 +13,7 @@ import QrCodeWp from './components/QrCodeWp';
 import { IQrCodeWpProps } from './components/IQrCodeWpProps';
 
 export interface IQrCodeWpWebPartProps {
-  description: string;
+  useMicrosoftGraph: boolean;
 }
 
 export default class QrCodeWpWebPart extends BaseClientSideWebPart<IQrCodeWpWebPartProps> {
@@ -23,6 +24,7 @@ export default class QrCodeWpWebPart extends BaseClientSideWebPart<IQrCodeWpWebP
       {
         serviceScope: this.context.serviceScope,
         siteUrl: this.context.pageContext.site.absoluteUrl,
+        useMicrosoftGraph: this.properties.useMicrosoftGraph,
         siteID: `${window.location.hostname},${this.context.pageContext.site.id},${this.context.pageContext.web.id}`
       }
     );
@@ -49,8 +51,8 @@ export default class QrCodeWpWebPart extends BaseClientSideWebPart<IQrCodeWpWebP
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
+                PropertyPaneToggle('useMicrosoftGraph', {
+                  label: strings.UseGraphFieldLabel
                 })
               ]
             }

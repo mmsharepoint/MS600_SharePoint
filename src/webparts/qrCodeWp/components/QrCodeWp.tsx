@@ -16,12 +16,16 @@ export default class QrCodeWp extends React.Component<IQrCodeWpProps, IQrCodeWPS
     };
   }
   public componentDidMount() {
-    // this.spClient = this.props.serviceScope.consume(SPHttpClient.serviceKey);
-    this.props.serviceScope.consume(MSGraphClientFactory.serviceKey).getClient().then((client) => {
-      this.graphClient = client;
-      this.loadDocumentsWithGraph();
-    })
-    // this.loadDocuments();
+    if (this.props.useMicrosoftGraph) {
+      this.props.serviceScope.consume(MSGraphClientFactory.serviceKey).getClient().then((client) => {
+        this.graphClient = client;
+        this.loadDocumentsWithGraph();
+      });
+    }
+    else {
+      this.spClient = this.props.serviceScope.consume(SPHttpClient.serviceKey);
+      this.loadDocuments();
+    } 
   }
   private loadDocuments() {
     const requestUrl = `${this.props.siteUrl}/_api/web/lists/GetByTitle('Dokumente')/items?$select=ID,FileLeafRef,EncodedAbsUrl`;

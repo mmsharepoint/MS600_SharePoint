@@ -4,4 +4,5 @@ export interface IQrCodeWpProps {
   siteUrl: string;
   siteID: string;
   serviceScope: ServiceScope;
+  useMicrosoftGraph: boolean;
 }

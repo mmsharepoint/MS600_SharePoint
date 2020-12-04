@@ -13,6 +13,12 @@
       "termsOfUseUrl": "",
       "mpnId": ""
     },
+    "webApiPermissionRequests": [
+      { 
+        "resource": "Microsoft Graph",
+        "scope": "Sites.Read.All"
+      }
+    ],
     "features": [
       {
         "title": "Application Extension - Deployment of custom action.",
