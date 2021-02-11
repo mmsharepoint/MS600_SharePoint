@@ -73,7 +73,9 @@ export default class QrCodeWp extends React.Component<IQrCodeWpProps, IQrCodeWPS
       <div className={ styles.qrCodeWp }>
         <div className={ styles.container }>
           <div className={ styles.row }>
-            {docs}
+            <ul>
+              {docs}
+            </ul>
           </div>
         </div>
       </div>

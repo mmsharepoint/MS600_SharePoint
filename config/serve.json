@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://mmoeller.sharepoint.com/teams/MMTeamNo17/Freigegebene%20Dokumente/Forms/AllItems.aspx",
+      "pageUrl": "https://<YouTenant>.sharepoint.com/Sites/<YouSite>/Freigegebene%20Dokumente/Forms/AllItems.aspx",
       "customActions": {
         "58ac0084-3f03-404f-a526-97f00e30a3b8": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
@@ -15,7 +15,7 @@
       }
     },
     "qrCode": {
-      "pageUrl": "https://mmoeller.sharepoint.com/teams/MMTeamNo17/Freigegebene%20Dokumente/Forms/AllItems.aspx",
+      "pageUrl": "https://<YouTenant>.sharepoint.com/Sites/<YouSite>/Freigegebene%20Dokumente/Forms/AllItems.aspx",
       "customActions": {
         "58ac0084-3f03-404f-a526-97f00e30a3b8": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
